@@ -1,0 +1,327 @@
+/**********************************************************
+Fonts
+**********************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;900&display=swap");
+
+/**********************************************************
+Variables
+**********************************************************/
+:root {
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --clr-textPrimary: #333333;
+  --clr-textDark: rgba(0, 0, 0, 0.8);
+  --clr-textLight: #929292;
+  --clr-border: #eaeaea;
+  --clr-accent: #3e86d8;
+  --clr-white: #fff;
+  --clr-lightgray: #fafafa;
+  --transition: 0.3s ease;
+}
+
+/**********************************************************
+Basic styles
+**********************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-textPrimary);
+  background-color: var(--clr-accent);
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0px 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  font-family: var(--ff-secondary);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+button {
+  color: var(--clr-white);
+  letter-spacing: 0.1em;
+  background-color: var(--clr-accent);
+  border: none;
+  padding: 0.8em 1.2em;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--clr-textDark);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+/**********************************************************
+Header
+**********************************************************/
+header {
+  background-image: url(./img/bg.jpg);
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+header article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.logo {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 3.3rem;
+  line-height: 0.55em;
+  text-align: center;
+  font-weight: 900;
+  color: var(--clr-white);
+  padding: 0.6em 0.3em;
+}
+
+.logo span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.icons a {
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  margin-left: 1em;
+  transition: var(--transition);
+}
+
+.icons a:hover {
+  color: var(--clr-accent);
+}
+
+header nav {
+  background-color: var(--clr-accent);
+  padding: 1.25em 0;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav a {
+  color: var(--clr-white);
+  opacity: 0.6;
+  /* padding: 0.5em; */
+  transition: var(--transition);
+}
+
+nav a:hover {
+  opacity: 1;
+}
+/**********************************************************
+Services
+**********************************************************/
+.services {
+  padding: 6rem 0;
+  background-color: var(--clr-white);
+}
+
+.services .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* gap: 1em; */
+}
+
+.services article {
+  flex: 0 0 24%;
+}
+
+.services h3 {
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+.services p {
+  color: var(--clr-textDark);
+  margin-top: 0.5em;
+}
+
+.services a {
+  text-decoration: underline;
+  color: var(--clr-textPrimary);
+}
+
+/**********************************************************
+Blog
+**********************************************************/
+.blog {
+  background-color: var(--clr-lightgray);
+  padding: 6rem 0;
+  text-align: center;
+  border-top: 1px solid var(--clr-border);
+}
+
+.blog .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.blog article {
+  flex: 0 0 24%;
+}
+
+.blog h4 {
+  margin-bottom: 6rem;
+  letter-spacing: 0.15em;
+}
+
+.blog p {
+  color: var(--clr-textLight);
+  margin-bottom: 1.5em;
+}
+
+/**********************************************************
+Footer
+**********************************************************/
+footer {
+  height: 13.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  text-decoration: underline;
+  color: var(--clr-textPrimary);
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+/**********************************************************
+Responsiveness
+**********************************************************/
+@media (max-width: 375px) {
+  .logo {
+    font-size: 2.7rem;
+  }
+  .logo span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header article {
+    flex-direction: column;
+  }
+  .icons {
+    margin-top: 1em;
+  }
+  .icons a:first-child {
+    margin-left: 0;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+  .container {
+    width: 90%;
+  }
+  .services .container {
+    gap: 3rem;
+  }
+  .services article {
+    flex: 0 0 100%;
+    text-align: justify;
+  }
+  .blog {
+    padding: 6rem 1rem;
+  }
+  .blog .container {
+    gap: 3rem;
+  }
+  .blog article {
+    flex: 0 0 100%;
+  }
+  footer p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    width: 80%;
+  }
+  .services .container {
+    gap: 3rem 1rem;
+  }
+  .services article {
+    flex: 0 0 48%;
+  }
+  .blog .container {
+    gap: 3rem 1rem;
+  }
+  .blog article {
+    flex: 0 0 48%;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1655px){
+  .container {
+    width: 67%;
+  }
+  .services .container {
+    gap: 3rem 1.5rem;
+  }
+  .services article {
+    flex: 0 0 31%;
+  }
+  .services article:first-child {
+    flex: 3 0 70%;
+    text-align: justify;
+  } 
+}
